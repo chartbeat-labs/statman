@@ -10,7 +10,7 @@
 
 statman is a clojure library for collecting stats for an application.
 
-Statistics should tax your application, they should be fast and reliable. To this goal, things like statsd or tsdb 
+Statistics shouldn't tax your application, they should be fast and reliable. To this goal, things like statsd or tsdb 
 can frequently create a lot of overhead by sending traffic constantly to their backends. With statman we just collect 
 stats and aggregate them. It's up to you to collect them from jmx or read them from the log file. 
 
