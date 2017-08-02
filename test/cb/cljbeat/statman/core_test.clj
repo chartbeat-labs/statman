@@ -28,13 +28,13 @@
     (let [aggs-foo (get-aggregated-data :foo)
           aggs-bar (get-aggregated-data :bar)]
       (println "Bar: " aggs-bar)
-      (is (= (:max aggs-bar) 10))
+      (is (= (:max aggs-bar) 10.0))
       (is (= (:count aggs-bar) 3))
-      (is (= (:min aggs-bar) 5))
+      (is (= (:min aggs-bar) 5.0))
       (is (= (:avg aggs-bar) 7.0))
       (is (= (:max aggs-foo) 63.5))
       (is (= (:sum aggs-foo) 72.5)))
     (apply-aggregated-data :bar (get-aggregated-data :bar))
-    (is (= 10 (get-in @app-stats [:bar_max])))
+    (is (= 10.0 (get-in @app-stats [:bar_max])))
     (println @app-stats)))
 

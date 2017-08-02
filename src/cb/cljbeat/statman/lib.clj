@@ -18,18 +18,18 @@
   (get-generated-stats [_] [:avg, :max, :min, :count, :sum])
   (compute-aggregations [this]
     (let [data (:data-points this)
-          sum (apply + data)
-          c (count data)]
+          c (count data)
+          sum (if (> c 0 ) (float  (apply + data)) 0)]
       (-> this
           (assoc :count c)
           (assoc :max (if (> c 0)
-                        (apply max data)
+                        (float (apply max data))
                         0))
           (assoc :min (if (> c 0)
-                        (apply min data)
+                        (float (apply min data))
                         0))
           (assoc :sum sum)
-          (assoc :avg (float (if (> c 0)
+          (assoc :avg (float (if (and  (> c 0) (> sum 0))
                                (/ sum c)
                                0)))
           (select-keys (get-generated-stats this)))))
