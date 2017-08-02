@@ -1,4 +1,4 @@
-(defproject com.chartbeat.cljbeat/statman "0.1.1-SNAPSHOT"
+(defproject com.chartbeat.cljbeat/statman "0.1.2-SNAPSHOT"
   :description "A stat library based around jmx"
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
