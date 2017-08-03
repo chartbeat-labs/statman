@@ -34,7 +34,7 @@
   ...)"
   [stat-name body]
   `(let [start# (System/currentTimeMillis)
-         result# (do ~@body)]
+         result# ~body]
      (update-stat! ~stat-name (- (System/currentTimeMillis) start#))
      result#))
 

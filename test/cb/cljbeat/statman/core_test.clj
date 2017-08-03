@@ -36,5 +36,6 @@
       (is (= (:sum aggs-foo) 72.5)))
     (apply-aggregated-data :bar (get-aggregated-data :bar))
     (is (= 10.0 (get-in @app-stats [:bar_max])))
+    (is (= (with-timing! :foo (+ 1 1)) 2))
     (println @app-stats)))
 
