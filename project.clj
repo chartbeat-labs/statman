@@ -6,7 +6,7 @@
                  [org.clojure/java.jmx "0.3.3"]
                  [org.clojure/tools.logging "0.3.1"]
                  [overtone/at-at "1.2.0"]]
-  :deploy-repositories [["releases" :clojars {:creds :gpg}]]
+  :deploy-repositories [["releases" :clojars]]
   :target-path "target/%s"
   :vcs :git
   :aot :all
