@@ -23,7 +23,9 @@
   (update-data :foo 42.0)"
   [name value]
   (log/debugf "updating %s to %s" name value)
-  (swap! statistics update-in [name] update-data value))
+  (if (contains? @statistics name)
+    (swap! statistics update-in [name] update-data value)
+    (log/info "unregistered stat: " name)))
 
 (defmacro with-timing!
   "Track with timing
