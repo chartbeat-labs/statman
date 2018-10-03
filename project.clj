@@ -3,8 +3,8 @@
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/java.jmx "0.3.3"]
-                 [org.clojure/tools.logging "0.3.1"]
+                 [org.clojure/java.jmx "0.3.4"]
+                 [org.clojure/tools.logging "0.4.1"]
                  [overtone/at-at "1.2.0"]]
   :deploy-repositories [["releases" :clojars]]
   :target-path "target/%s"
